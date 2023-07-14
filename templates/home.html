@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+ {% block page_title_header %} Predict Crop {% endblock %}
+{% block content %}
+<br>
+<form method="POST">
+<table style="
+  width: 80%;
+  height: 20%;
+font-weight:bold;  ">
+
+<tr>
+	<th colspan="2"> Enter data for Crop Prediction </th>
+</tr>
+<tr>
+	<td> Nitrogen <input type="number"  name="ni" min="0" max="150"  style="float:right; width:180px; " required> </td>
+	<td> Phosphorus <input type="number" name="phos" min="0" max="190"  style="float:right; width:180px; " required> </td>
+</tr>
+<tr>
+	<td> Potassium <input type="number" name="potas" min="0" max="250"   style="float:right; width:180px; " required> </td>
+	<td> temprature <input type="number" name="temp" min="10" max="50"  style="float:right; width:180px; " required> </td>
+</tr>
+<tr>
+	<td> Humidity <input type="number" name="humi" min="10" max="100"  style="float:right; width:180px; " required> </td>
+	<td> pH  <input type="number" step="any" name="ph" min="4" max="8" style="float:right; width:180px; " required> </td>
+</tr>
+<tr>
+	<td colspan="2"> Rainfall <input type="number" name="rf" min="10" max="400" style="float:center; width:180px; " required> </td>
+	
+</tr>
+</table>
+<br>
+<input type="submit" value="predict">
+</form>
+<h1><strong><u>{{m}}</u></strong></h1>
+
+{% endblock %}

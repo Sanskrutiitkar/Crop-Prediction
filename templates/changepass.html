@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+ {% block page_title_header %} Change Password {% endblock %}
+{% block content %}
+<br>
+<br>
+<form method="POST">
+	<h2 style="text-decoration:underline;"> Change password <h2>
+	<br>
+	<input type="text" name="un" placeholder="enter your username " minlength="3" maxlength="15" pattern="[A-Za-z]+" required>
+	<br><br>
+	<input type="password" name="pw1" placeholder="enter new password " minlength="4" required>
+	<br><br>
+	<input type="password" name="pw2" placeholder="confirm new password " minlength="4" required>
+	<br><br>
+	<input type="submit" value="Change">
+	<br><br>
+</form>
+{{ m }}
+<h2> (NOTE: If password updation is successful login again to continue) </h2>
+
+{% endblock %}

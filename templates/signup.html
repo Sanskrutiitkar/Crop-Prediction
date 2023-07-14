@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+ {% block page_title_header %} Signup {% endblock %}
+{% block content %}
+<br>
+<br>
+<form method="POST">
+	<h2 style="text-decoration:underline;"> REGISTER <h2>
+	<br>
+	<input type="text" name="un" placeholder="enter username(only letters) " minlength="3" maxlength="15" pattern="[A-Za-z]+" required>
+	<br><br>
+	<input type="password" name="pw1" placeholder="enter password " minlength="4" required>
+	<br><br>
+	<input type="password" name="pw2" placeholder="confirm password " minlength="4" required>
+	<br><br>
+	<input type="submit" value="Register">
+	<br><br>
+</form>
+{{ m }}
+{% endblock %}

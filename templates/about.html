@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+ {% block page_title_header %} About us {% endblock %}
+{% block content %}
+<br>
+
+<ul style=" text-align: left; padding-left: 140px; padding-right:140px; font-weight:bold;">
+<li>
+As we know the fact that, India is the second largest population country in the world 
+and majority of people in India have agriculture as their occupation. 
+Farmers are growing same crops repeatedly without trying new verity of crops.
+</li>
+ <li>
+This is directly affecting on crop yield so, we have designed the system using machine learning algorithms for betterment of farmers. 
+Our system will suggest the best suitable crop for particular land based on content and weather parameters. 
+</li>
+<li>
+Agriculture growth is infulenced by a variety of soil parameters such as nitrogen,phosphorus and potassium as well as soil moisture, 
+climatic factors such as temprature and rainfall our webiste will benifit agriculture by increasing crop productivity 
+</li>
+<li>
+Using Machine Learning it is possible to anticipate the most suited crop based on current environmental circumstances
+</li>
+</ul>
+<center> <b>What We Do??</b> </center>
+<img src="{{ url_for ('static' , filename='images/img.png') }}" width="700" height="300" style="border:5px solid #555"/>
+
+{% endblock %}

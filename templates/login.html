@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+ {% block page_title_header %} Login {% endblock %}
+{% block content %}
+<br>
+<br>
+<form method="POST" >
+	<h2 style="text-decoration:underline;"> LOGIN <h2>
+	<br>
+	<input type="text" name="un" placeholder="enter username " minlength="3" maxlength="15" required>
+	<br><br>
+	<input type="password" name="pw" placeholder="enter password"  required>
+	<br><br>
+	<input type="submit" value="Login">
+	<br><br> 
+{{ m }}
+	<br><br>
+	<a href="{{ url_for('signup') }}"> are you new here? </a>
+</form>
+
+
+{% endblock %}

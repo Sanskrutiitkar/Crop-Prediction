@@ -1,0 +1,114 @@
+<html>
+<head>
+<title> {% block page_title_header %} {% endblock %} </title>
+<style>
+*{font-size:27px;
+  font-family: Calibri;  
+}
+.container {
+  position: absolute;
+  margin: 20px;
+  width:96%;
+  
+}
+
+/* The navbar */
+.topnav {
+  overflow: auto;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.bg-img {
+  min-height: 80px;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+body { 
+  background-image: url({{ url_for ('static' , filename='images/bckg1.jpg') }});
+  background-size: cover;
+  background-attachment: fixed;	
+  background-position: 50% 50%;		
+
+}
+input{
+ border: none;
+ border-bottom: 3px solid black;
+ outline: none;
+ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+ 
+}
+input::placeholder {
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    opacity: 0.5;
+    color: black;
+}
+table, th, td {
+                border-collapse: collapse;
+                text-align:center;
+            }
+th, td {
+                padding: 20px;
+                background-color:none;
+            }
+
+</style>
+<link rel="icon" href="static/images/icon.ico"> </link>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<center>
+<div class="bg-img">
+<div class="container">
+	<div class="topnav">
+	
+		{% if "un" in session %}
+			<a href="{{ url_for('changepass') }}"> changepass </a>
+			<a href="{{ url_for('logout') }}"> Logout </a>
+			<a href="{{ url_for('about') }}" > About us </a>
+
+		{% else %}
+	
+			<a href="{{ url_for('login') }}"> Login </a>
+			<a href="{{ url_for('signup') }}"> Register </a>
+			<a href="{{ url_for('start') }}" > Home </a>
+		
+			
+		{% endif %}
+	</div>
+</div>
+<br>
+<br>
+<div class = "mainpage">
+	{% block content %}
+
+	{% endblock %}
+</div>
+</div>
+</center>
+</body>
+</html>
